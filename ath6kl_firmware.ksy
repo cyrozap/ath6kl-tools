@@ -3,6 +3,9 @@ meta:
   endian: le
   title: Firmware for ath6kl devices
   license: CC0-1.0
+doc-ref:
+  - https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/ath/ath6kl/core.h
+  - https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/ath/ath6kl/init.c
 seq:
   - id: magic
     contents: "QCA-ATH6KL\0" # Magic includes the null byte.
