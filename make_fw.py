@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: 0BSD
 
-# Copyright (C) 2018 by Forest Crossman <cyrozap@gmail.com>
+# Copyright (C) 2018, 2023 by Forest Crossman <cyrozap@gmail.com>
 #
 # Permission to use, copy, modify, and/or distribute this software for
 # any purpose with or without fee is hereby granted.
@@ -18,7 +18,7 @@
 
 import argparse
 import struct
-from datetime import datetime
+from datetime import datetime, UTC
 
 
 def gen_fw(fw_image):
@@ -29,7 +29,7 @@ def gen_fw(fw_image):
     h += struct.pack('<I', len(fw_version))
     h += fw_version
 
-    timestamp = int(datetime.utcnow().timestamp())
+    timestamp = int(datetime.now(UTC).timestamp())
     h += struct.pack('<I', 1)
     h += struct.pack('<I', 4)
     h += struct.pack('<I', timestamp)
